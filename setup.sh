@@ -57,6 +57,7 @@ elif [ "$opcao" == "2" ]; then
     # Seu script para macOS aqui
     echo "Executando o script para macOS..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    brew install wget
     # Atualizando o Homebrew
     brew update
     # Instalando PHP
@@ -74,7 +75,8 @@ elif [ "$opcao" == "2" ]; then
     # Recarregando .bash_profile para utilizar o NVM
     source ~/.bash_profile
     # Instalando o Node.js
-    nvm install node
+    brew install nvm
+    brew install node
     # Instalando o Discord
     brew install --cask discord
     # Instalando o AnyDesk
@@ -91,6 +93,8 @@ elif [ "$opcao" == "2" ]; then
     npm install -g react-native-cli
     # Instalando o Insomnia
     brew install --cask insomnia
+    # instalando pod
+    brew install pods
 else
     echo "Opção inválida. Por favor, escolha 1 ou 2."
 fi
