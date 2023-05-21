@@ -94,7 +94,7 @@ elif [ "$opcao" == "2" ]; then
     # Instalando o Insomnia
     brew install --cask insomnia
     # instalando pod
-    brew install pods
+    brew install cocoapods
 else
     echo "Opção inválida. Por favor, escolha 1 ou 2."
 fi
