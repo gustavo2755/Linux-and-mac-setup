@@ -86,6 +86,7 @@ elif [ "$opcao" == "2" ]; then
     # Instalando o Android Studio
     brew install --cask android-studio
     # Configurando as variáveis de ambiente JAVA_HOME e PATH
+    brew install java11  
     echo "export JAVA_HOME=$(/usr/libexec/java_home)" >> ~/.bash_profile
     echo "export PATH=$PATH:$JAVA_HOME/bin" >> ~/.bash_profile
     source ~/.bash_profile
