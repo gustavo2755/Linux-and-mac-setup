@@ -53,6 +53,10 @@ if [ "$opcao" == "1" ]; then
     npm install -g react-native-cli
     # Instalando o Insomnia
     sudo snap install insomnia
+    # Instalando o yarn
+    sudo snap install yarn
+    # Instalando o bundletool
+    sudo snap install bundletool
 elif [ "$opcao" == "2" ]; then
     # Seu script para macOS aqui
     echo "Executando o script para macOS..."
@@ -96,6 +100,10 @@ elif [ "$opcao" == "2" ]; then
     brew install --cask insomnia
     # instalando pod
     brew install cocoapods
+    # Instalando o yarn
+    brew install yarn
+    # Instalando o bundletool
+    brew install bundletool
 else
     echo "Opção inválida. Por favor, escolha 1 ou 2."
 fi
