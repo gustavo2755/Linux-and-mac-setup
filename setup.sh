@@ -16,13 +16,12 @@ if [ "$opcao" == "1" ]; then
     sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
     rm composer-setup.php
     # Instalando o Docker
-    curl -fsSL https://get.docker.com -o get-docker.sh
-    sudo sh get-docker.sh
-    rm get-docker.sh
-    sudo usermod -aG docker $USER
-    # Instalando o Docker Compose
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
+    sudo apt update
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt update
+    sudo apt install docker-ce docker-ce-cli containerd.io
     # Instalando o Node Version Manager (NVM)
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     # Recarregando .bashrc para utilizar o NVM
